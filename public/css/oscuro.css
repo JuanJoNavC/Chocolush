@@ -1,0 +1,305 @@
+/* oscuro.css */
+
+/* Estilos generales en el modo oscuro */
+body {
+    background-color: #1c1c1c; /* Fondo oscuro */
+    color: #e0e0e0; /* Texto claro */
+}
+
+/* Header */
+header {
+    background-color: #102A2A; /* Fondo oscuro */
+    color: #e0e0e0; /* Texto claro */
+}
+
+header h1 {
+    color: #fff; /* Título blanco */
+}
+
+/* Menú de navegación */
+nav ul li a {
+    color: #e0e0e0; /* Enlaces en texto claro */
+}
+
+nav ul li a:hover {
+    color: #aaa; /* Enlaces hover más claros */
+}
+
+/* Icono de usuario */
+.user-icon i {
+    color: #e0e0e0; /* Icono blanco */
+}
+
+.user-icon:hover i {
+    color: #bbb; /* Hover sobre icono */
+}
+
+/* Fondo de la página */
+body {
+    background-color: #333;
+}
+
+#menuicono{
+    background-color: #102A2A;
+}
+
+/* Imagen centrada */
+.imagen-centrada {
+    border: 2px solid #e0e0e0; /* Borde blanco */
+}
+
+/* Imágenes */
+.imgInicio, .imgInicio2, .imgReservar {
+    border-radius: 61px;
+    border: 0px solid #fff;
+    box-shadow: 0 4px 10px rgba(255, 255, 255, 0.1); /* Sombra sutil */
+}
+
+/* Descripciones */
+.descripcionDerecha, .descripcionIzquierda {
+    color: #e0e0e0; /* Texto claro */
+}
+
+.descripcionDerecha h2, .descripcionIzquierda h2 {
+    color: #fff; /* Títulos blancos */
+}
+
+/* Estilos del artículo */
+.articulo, .articulo2 {
+    background-color: #333; /* Fondo más oscuro */
+}
+
+.articulo h2, .articulo2 h2 {
+    color: #fff; /* Títulos en blanco */
+}
+
+/* Enlaces */
+a {
+    display: block;
+    padding: 1em;
+    background-color: #102A2A; /* Fondo oscuro para los enlaces */
+    text-align: center;
+    margin-bottom: 0.2em;
+    font-family: 'Trebuchet MS', sans-serif;
+    font-weight: bold;
+    text-decoration: none;
+    color: white;
+    border-radius: 5px;
+}
+
+a:hover {
+    color: #444; /* Texto más claro */
+}
+
+/* Video */
+.video-background {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Elimina las barras negras ajustando el video */
+    z-index: -1; /* Coloca el video detrás del contenido */
+}
+
+.video-container {
+    position: relative;
+    transition: margin-top 0.3s ease; /* Animación suave */
+    width: 100%;
+    height: 68vh; /* Ocupa toda la altura de la ventana */
+    overflow: hidden; /* Evita que el contenido salga del contenedor */
+}
+.move-down {
+    margin-top: 200px; /* Ajusta el valor según la altura de tu menú */
+}
+.navigation li{
+    background-color: #102A2A;
+}
+.navigation ul{
+    background-color: #102A2A;
+}
+
+.video-background video {
+    position: initial;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    min-width: 100%;
+    min-height: 100%;
+    width: auto;
+    height: auto;
+    z-index: 1;
+    object-fit: cover;
+}
+
+/* Texto sobre el video */
+.video-overlay {
+    color: white; /* Texto blanco sobre fondo oscuro */
+}
+
+/* Promociones */
+.promociones {
+    background-color: #102A2A; /* Color oscuro */
+    color: white; /* Texto blanco */
+}
+
+.titulo-promociones {
+    color: white;
+}
+
+/* Imágenes de promociones */
+.imagen-promocion {
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3); /* Sombra sutil */
+}
+
+/* Cambiar colores turquesa a tonos más oscuros */
+.turquesa, .verde {
+    background-color: #4b8f8c; /* Verde oscuro para modo oscuro */
+    color: #e0e0e0; /* Texto claro */
+}
+footer{
+    background-color: #102A2A;
+}
+
+.infoReserva{
+    background-color: rgb(49, 46, 46);
+}
+
+.infoReserva h2 {
+    color: #bbb;
+}
+
+.infoReserva p{
+    color: #bbb;
+}
+
+#btnEditar, #btnCancelar {
+    color:#bbb
+}
+
+#btnEditar {
+    background-color: #4b5634;
+}
+
+.paginacion .btn-pagina.activo{
+    background-color: #4b5634;
+}
+
+#btnCancelar, #btnLimpiarReservas {
+    background-color: #7e1520;
+}
+
+.precio{
+    background-color: #333333;
+    color: #fff;
+}
+
+.contenedor:hover{
+    background-color: #222222;
+}
+.contenedor1:hover{
+    background-color: #222222;
+}
+.contenedor:hover .precio {
+    background-color: #222222;
+    color: #fff;
+}
+.contenedor1:hover .precio {
+    background-color: #222222;
+    color: #fff;
+}
+.btnReservar {
+    background-color: #102A2A;
+}
+.btnReservar:hover {
+    background-color: #1A4040 ;
+}
+.main-container {
+    background-color: #333333;
+}
+.producto{
+    background-color: rgb(49, 46, 46);
+    box-shadow: 0px 4px 8px #1A4040;
+}
+
+aside {
+    background-color: rgb(49, 46, 46);
+    box-shadow: 0px 4px 8px #1A4040;
+}
+
+.resumen {
+    background-color: rgb(49, 46, 46);
+}
+
+@media (max-width: 768px){
+    .carrito-ventana{
+        background-color: rgb(49, 46, 46);
+    }
+}
+
+.btnContinuar {
+    background-color: #102A2A;
+}
+.btnContinuar:hover {
+    background-color: #1A4040;
+}
+.login-container{
+    background-color: rgb(49, 46, 46);
+    box-shadow: 0px 4px 8px #1A4040;
+}
+.login-container h2{
+    color: #fff;
+}
+.login-form label{
+    color: #fff;
+}
+.login-button {
+    background-color: #102A2A;
+}
+.login-button:hover {
+    background-color: #1A4040;
+}
+.login-form input{
+    background-color: rgb(69, 67, 67);
+    color: #fff;
+}
+.register-text a{
+    color: #2f6c6c;
+}
+.register-form label{
+    color: #fff;
+}
+.register-form input{
+    background-color: rgb(69, 67, 67);
+    color: #fff;
+}
+.login-container h3{
+    color: #fff;
+}
+.register-form select{
+    background-color: rgb(69, 67, 67);
+    color: #fff;
+}
+.datosPago{
+    background-color: rgb(49, 46, 46);
+    color: #fff;
+    box-shadow: 0px 4px 8px #1A4040;
+}
+.datosPago1{
+    background-color: rgb(49, 46, 46);
+    color: #fff;
+    box-shadow: 0px 4px 8px #1A4040;
+}
+.campoTextoPago{
+    background-color: rgb(69, 67, 67);
+    color: #fff;
+}
+#btnPagar {
+    background-color: #102A2A;
+}
+#btnPagar:hover {
+    background-color: #1A4040;
+}
+#modal-content {
+    background-color: rgb(69, 67, 67);
+} 

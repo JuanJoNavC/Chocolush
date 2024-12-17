@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="keywords" content="HTML, CSS, JavaScript">
+    <title>Restaurante</title>
+    <script src="micodigo.js"></script>
+    <link rel="stylesheet" href="css/estilo.css" media="screen">
+    <link id="oscuro-stylesheet" rel="stylesheet" href="css/oscuro.css" disabled>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <script src="javascript/guardarUltimaPagina.js"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Playwrite+GB+S:ital,wght@0,100..400;1,100..400&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="header">
+        <header>
+            <h1>Sabores de Hogar</h1>
+            <nav class="navigation">
+                <ul>
+                    <a class="MisReservas" href="pages/mis_reservas.html">Mis reservas</a>
+                    <li><a href="inicio.html">Inicio</a></li>
+                    <li><a href="pages/menu.html">Menú</a></li>
+                    <li><a href="pages/contactos.html">Contactos</a></li>
+                    <li><a href="pages/reservas.html">Reservar</a></li>
+                    <li><a href="pages/ordenar.html">Ordena aquí</a></li>
+                </ul>
+            </nav>
+                <!-- Contenedor para el ícono de usuario y menú desplegable -->
+                <div class="user-menu-container">
+                    <!-- Ícono de usuario -->
+                    <a href="pages/inicioSesion.html" class="user-icon" id="user-icon" title="Iniciar sesión">
+                        <i class="fa fa-user"></i>
+                    </a>
+    
+                    <!-- Menú desplegable que aparecerá solo si está logueado -->
+                    <div class="user-dropdown" id="user-dropdown" style="display: none;">
+                        <button onclick="cerrarSesion()">Cerrar Sesión</button>
+                    </div>
+                </div>
+        </header>
+    </div>
+    <nav id="menuicono"> 
+        <img src="images/menuHamburgesa.png" width="35" height="28" id="menu-img"> 
+    </nav>
+    <div class="video-container">
+        <video autoplay muted loop class="video-background">
+            <source src="images/video.mp4" type="video/mp4">
+            Tu navegador no soporta el elemento de video.
+        </video>
+        <div class="video-overlay">
+            <h1>Bienvenidos a </h1> <h1 class="letraColor">Sabores de Hogar</h1>
+            <p>Vive una experiencia única con sabores auténticos y un ambiente acogedor</p>
+        </div>
+    </div>
+    
+    <div class="promociones">
+        <h2 class="titulo-promociones">Promociones Navideñas</h2>
+        <div class="imagenes-promociones">
+          <img src="images/promoHamburguesa.webp" alt="Promoción 1" class="imagen-promocion">
+          <img src="images/martesLoco.webp" alt="Promoción 2" class="imagen-promocion">
+          <img src="images/promoLunes.webp" alt="Promoción 3" class="imagen-promocion">
+        </div>
+    </div>
+      
+
+     
+    <div class="principal">
+        <article class="articulo">
+            <img class="imgInicio" src="images/restauranteMejor.webp" height="auto" width="50%">
+            <div class = "descripcionDerecha">
+                <h2><strong>Sobre Nosotros</strong></h2>
+                <p>Fundado en 2020, nuestro restaurante nació del sueño familiar de crear un espacio donde 
+                    la comida fuese el centro de conexión entre las personas. Inspirados por las recetas caseras 
+                    de nuestras abuelas, decidimos abrir nuestras puertas para compartir con el público los sabores que nos 
+                    han acompañado desde nuestra infancia. Cada plato en nuestro menú cuenta una historia, desde las sopas 
+                    artesanales hasta los asados, preparados con cariño y tradición.</p>
+            </div>
+        </article>
+        <article class="articulo2">
+            <div class = "descripcionIzquierda">
+                <h2><strong>Ambiente</strong></h2>
+                <p>Al cruzar nuestras puertas, te encontrarás con un ambiente cálido y familiar, 
+                    ideal para disfrutar de una comida tranquila con los tuyos. Nuestra decoración 
+                    mezcla lo moderno con lo rústico, con mesas amplias, luz suave y detalles en madera que 
+                    hacen sentirte como en casa. El equipo de servicio está siempre dispuesto a hacer 
+                    de tu experiencia algo especial, porque para nosotros, cada cliente es parte de nuestra gran familia.</p>
+            </div>
+            <img class="imgInicio2" src="images/restauranteMejor2.webp" height="auto" width="50%">
+        </article>
+        <article class="articulo">
+            <img class="imgInicio" src="images/restauranteMejor3.webp" height="auto" width="50%">
+            <div class = "descripcionDerecha">
+                <h2><strong>Misión</strong></h2>
+                <p>Nuestra misión es crear experiencias memorables para las familias y amigos a través 
+                    de una cocina honesta, hecha con ingredientes frescos y locales, que respete las 
+                    tradiciones culinarias. Nos esforzamos por ofrecer un ambiente acogedor, donde cada 
+                    plato es preparado con amor y atención al detalle, brindando momentos de conexión y 
+                    disfrute alrededor de la mesa.</p>
+                <h2>Visión</h2>
+                <p>Ser el restaurante familiar líder en la comunidad, reconocido por su calidez, 
+                    hospitalidad y compromiso con la excelencia culinaria. Queremos ser el lugar al que 
+                    las personas acudan no solo para disfrutar de una comida deliciosa, sino también para 
+                    crear recuerdos especiales, impulsando al mismo tiempo la sostenibilidad y el apoyo a 
+                    los productores locales.</p>
+            </div>
+        </article>
+        <article class="articulo2">
+            <div class = "descripcionIzquierda">
+                <h2><strong>Acompañanos</strong></h2>
+                <p>No solo ofrecemos una deliciosa selección de comidas y bebidas, 
+                    sino que también contamos con un ambiente diseñado para quienes 
+                    necesitan un lugar cómodo para trabajar o estudiar. Ya sea que vengas 
+                    a disfrutar de una pausa para el café o a pasar varias horas concentrado 
+                    en tu trabajo, nuestras instalaciones están pensadas para brindarte el confort que necesitas.</p>
+            </div>
+            <img class="imgInicio2" src="images/restauranteTrabajar.webp" height="auto" width="50%">
+        </article>
+    </div>
+    <button class="boton-flotante" onclick="toggleDarkMode()">Modo Oscuro</button>
+
+    <div class="pie">
+        <footer>&copy 2024 Sabores de Hogar - Todos los derechos reservados</footer>
+    </div>
+    <script> 
+        var visible = false; 
+        function iniciar() { 
+            var elemento = document.getElementById("menu-img"); 
+            elemento.addEventListener("click", mostrarMenu); 
+        } 
+        function mostrarMenu() { 
+            var elemento = document.getElementsByClassName("navigation")[0]; 
+            if (!visible) { 
+                elemento.style.display = "block"; 
+                visible = true; 
+            } else { 
+                elemento.style.display = "none"; 
+                visible = false; 
+            } 
+        } 
+        window.addEventListener("load", iniciar); 
+    </script> 
+    <script src="javascript/modooscuro.js"></script> 
+    
+</body>
+
+</html>
