@@ -1,7 +1,16 @@
 {
+  "name": "restaurante",
+  "version": "1.0.0",
+  "description": "Proyecto de restaurante con Node.js y Express",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js"
+  },
   "dependencies": {
     "express": "^4.21.1",
     "mysql": "^2.18.1",
     "mysql2": "^3.11.5"
-  }
+  },
+  "author": "Nicolás Guevara",
+  "license": "ISC"
 }
