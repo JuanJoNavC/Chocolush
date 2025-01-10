@@ -55,3 +55,44 @@ fetch('/submit',{
     alert('Fallo al enviar el formulario de registro');
 });
 });
+
+document.querySelectorAll('.btnContinuar').forEach((boton) => {
+    boton.addEventListener('click', async () => {
+        try {
+            if (carrito.length === 0) {
+                alert('El carrito está vacío. Por favor, agrega productos antes de continuar.');
+                return;
+            }
+
+            const response = await fetch('/validar-stock', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify({ carrito }),
+            });
+
+            if (!response.ok) {
+                const data = await response.json();
+                let mensajeError = 'Errores detectados:\n';
+                data.errores.forEach((error) => {
+                    mensajeError += `${error.producto}: ${error.mensaje}\n`;
+                });
+                alert(mensajeError);
+                return;
+            }
+
+            const usuarioLogueado = sessionStorage.getItem('usuarioLogueado') === 'true';
+
+            if (usuarioLogueado) {
+                window.location.href = 'pagos.html';
+            } else {
+                window.location.href = 'inicioSesion.html';
+            }
+        } catch (error) {
+            console.error('Error al validar el stock:', error);
+            alert('Error al validar el stock. Por favor, intenta nuevamente.');
+        }
+    });
+});
+

@@ -49,15 +49,17 @@ function validarCVV(cvv) {
     return regex.test(cvv);
 }
 
+
+
 // Procesar el pago con validaciones
-function procesarPago(event) {
+async function procesarPago(event) {
     event.preventDefault();
 
     const numeroTarjeta = document.getElementById('numero-tarjeta').value.trim();
     const fechaExpiracion = document.getElementById('fecha-expiracion').value.trim();
     const cvv = document.getElementById('cvv').value.trim();
 
-    // Validaciones
+    // Validaciones de pago
     if (!validarNumeroTarjeta(numeroTarjeta)) {
         alert('Número de tarjeta inválido. Debe contener exactamente 16 dígitos.');
         return;
@@ -73,6 +75,27 @@ function procesarPago(event) {
         return;
     }
 
-    alert('Pago procesado exitosamente.');
-    // Lógica para enviar los datos al servidor o redirigir al usuario
+    // Actualizar el stock en la base de datos
+    try {
+        const response = await fetch('/actualizar-stock', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+            },
+            body: JSON.stringify({ carrito }), // Enviar el carrito al servidor
+        });
+
+        if (!response.ok) {
+            const data = await response.json();
+            alert('Error al procesar el pago: ' + data.mensaje);
+            return;
+        }
+
+        alert('Pago procesado y stock actualizado correctamente.');
+        window.location.href = 'ordenar.html'; // Redirigir a una página de confirmación
+    } catch (error) {
+        console.error('Error al actualizar el stock:', error);
+        alert('Error al procesar el pago. Por favor, intenta nuevamente.');
+    }
 }
+

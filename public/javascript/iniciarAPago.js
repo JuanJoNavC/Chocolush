@@ -11,28 +11,49 @@ document.querySelector('.login-form').addEventListener('submit', (event) => {
         alert('Por favor, completa todos los campos antes de continuar.');
         return;
     }
-    else {
-        // Guardar en sessionStorage que el usuario ha iniciado sesión
-        sessionStorage.setItem('usuarioLogueado', 'true');
-    }
 
-    // Obtener el carrito desde `sessionStorage`
-    const carrito = JSON.parse(sessionStorage.getItem('carrito')) || [];
-    const continuarPresionado = sessionStorage.getItem('continuarPresionado') === 'true';
-
-    // Obtener la última página visitada
-    const ultimaPagina = sessionStorage.getItem('ultimaPagina');
-
-    // Redirigir si el carrito está vacío o si no se ha presionado "Continuar"
-    if (carrito.length === 0 || !continuarPresionado) {
-        if (ultimaPagina) {
-            window.location.href = ultimaPagina; // Redirigir a la última página
+    // Enviar las credenciales al backend
+    fetch('/login', {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({
+            email: emailInput.value,
+            password: passwordInput.value,
+        }),
+    })
+    .then((response) => {
+        if (response.ok) {
+            return response.json();
+        } else {
+            throw new Error('Correo o contraseña incorrectos');
         }
-        return;
-    }
+    })
+    .then((data) => {
+        alert(data.message); // Mensaje de éxito
 
-    // Si el carrito tiene productos y el botón "Continuar" fue presionado, redirigir a pagos.html
-    window.location.href = 'pagos.html';
+        // Guardar información del cliente en sessionStorage (opcional)
+        sessionStorage.setItem('cliente', JSON.stringify(data.cliente));
+        sessionStorage.setItem('usuarioLogueado', 'true');
+
+        // Redirigir según el carrito o la última página visitada
+        const carrito = JSON.parse(sessionStorage.getItem('carrito')) || [];
+        const continuarPresionado = sessionStorage.getItem('continuarPresionado') === 'true';
+        const ultimaPagina = sessionStorage.getItem('ultimaPagina');
+
+        if (carrito.length === 0 || !continuarPresionado) {
+            if (ultimaPagina) {
+                window.location.href = ultimaPagina; // Redirigir a la última página
+            } else {
+                window.location.href = 'inicio.html'; // Página por defecto si no hay última página
+            }
+        } else {
+            // Si el carrito tiene productos y se presionó "Continuar", redirigir a pagos.html
+            window.location.href = 'pagos.html';
+        }
+    })
+    .catch((error) => {
+        alert(error.message); // Mostrar error
+    });
 });
-
-

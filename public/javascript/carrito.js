@@ -139,20 +139,51 @@ document.querySelectorAll('.icono-mas').forEach((boton, index) => {
 });
 
 document.querySelectorAll('.btnContinuar').forEach((boton) => {
-    boton.addEventListener('click', () => {
-        // Guardar el estado de "Continuar presionado" en sessionStorage
-        sessionStorage.setItem('continuarPresionado', 'true');
-        const usuarioLogueado = sessionStorage.getItem('usuarioLogueado') === 'true';
+    boton.addEventListener('click', async () => {
+        try {
+            // Validar que el carrito no esté vacío
+            if (carrito.length === 0) {
+                alert('El carrito está vacío. Por favor, agrega productos antes de continuar.');
+                return;
+            }
 
-        if (usuarioLogueado) {
-            // Redirigir directamente a pagos.html si ya inició sesión
-            window.location.href = 'pagos.html';
-        } else {
-            // Redirigir al login si no ha iniciado sesión
-            window.location.href = 'inicioSesion.html';
+            // Enviar el carrito al servidor para validar el stock
+            const response = await fetch('/validar-stock', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify({ carrito }), // Enviar el carrito actual
+            });
+
+            if (!response.ok) {
+                // Manejar errores enviados por el servidor
+                const data = await response.json();
+                let mensajeError = 'Errores detectados:\n';
+                data.errores.forEach((error) => {
+                    mensajeError += `${error.producto}: ${error.mensaje}\n`;
+                });
+                alert(mensajeError);
+                return; // Detener el flujo si hay errores
+            }
+
+            // Si no hay errores, proceder con la redirección
+            const usuarioLogueado = sessionStorage.getItem('usuarioLogueado') === 'true';
+
+            if (usuarioLogueado) {
+                // Redirigir directamente a pagos.html si ya inició sesión
+                window.location.href = 'pagos.html';
+            } else {
+                // Redirigir al login si no ha iniciado sesión
+                window.location.href = 'inicioSesion.html';
+            }
+        } catch (error) {
+            console.error('Error al validar el stock:', error);
+            alert('Error al validar el stock. Por favor, intenta nuevamente.');
         }
     });
 });
+
 
 
 
