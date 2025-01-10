@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8" />
+    <title>Crear Producto</title>
+    <link rel="stylesheet" href="productos.css" />
+    <link href="https://fonts.googleapis.com/css2?family=DynaPuff&display=swap" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet" />
+    <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+</head>
+
+<body>
+    <div class="nav-bar">
+        <nav class="main-nav">
+            <!-- Logo -->
+            <div class="logo-container">
+                <a href="/inicio.html">
+                    <img class="logo" src="/images/ChocoLushLogo.png" alt="ChocoLushLogo">
+                </a>
+
+            </div>
+
+            <!-- Hamburger Icon -->
+            <div class="hamburger" id="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+
+            <!-- Navigation Links -->
+            <ul class="nav-links" id="nav-links">
+                <li><a href="/inicio.html">Home</a></li>
+                <li><a href="/pages/menu.html">Brands</a></li>
+                <li><a href="/pages/ordenar.html">Productos</a></li>
+                <li><a href="/admin/clientes/index.html">Clientes</a></li>
+                <li><a href="/admin/facturas/index.html">Factura</a></li>
+                <li><a href="/admin/productos/index.html">Productos</a></li>
+            </ul>
+
+            <!-- User Icon -->
+            <div class="user-menu-container">
+                <a href="/pages/inicioSesion.html" class="user-icon" id="user-icon" title="Iniciar sesión">
+                    <i class="fa fa-user"></i>
+                </a>
+            </div>
+        </nav>
+    </div>
+
+    <div class="offcanvas-menu" id="offcanvasMenu">
+        <ul class="offcanvas-nav-links">
+            <li><a href="/inicio.html">Home</a></li>
+            <li><a href="/pages/menu.html">Brands</a></li>
+            <li><a href="/pages/ordenar.html">Productos</a></li>
+            <li><a href="/admin/clientes/index.html">Clientes</a></li>
+            <li><a href="/admin/facturas/index.html">Factura</a></li>
+            <li><a href="/admin/productos/index.html">Productos</a></li>
+            <li>
+                <a href="/pages/inicioSesion.html">
+                    <i class="fa fa-user"></i>
+                </a>
+            </li>
+        </ul>
+    </div>
+
+    <!-- Overlay -->
+    <div class="offcanvas-overlay" id="offcanvasOverlay"></div>
+
+    <div class='mainTable'>
+        <h1>Crear Producto</h1>
+        <a href="index.html" class="btn">← Volver a Productos</a>
+        <form id="form-create">
+            <label for="PROD_NOMBRE">Nombre:</label>
+            <input id="PROD_NOMBRE" name="PROD_NOMBRE" placeholder="Nombre del producto" required />
+
+            <label for="PROD_PRECIO">Precio:</label>
+            <input id="PROD_PRECIO" name="PROD_PRECIO" type="number" step="0.01" placeholder="Precio en dólares"
+                required />
+
+            <label for="PROD_STOCK">Stock:</label>
+            <input id="PROD_STOCK" name="PROD_STOCK" type="number" placeholder="Cantidad en inventario" required />
+
+            <label for="PROD_CATEGORIA">Categoría:</label>
+            <input id="PROD_CATEGORIA" name="PROD_CATEGORIA" placeholder="Categoría del producto" required />
+
+            <label for="PROD_DESC">Descripción detallada:</label>
+            <textarea id="PROD_DESC" name="PROD_DESC" placeholder="Descripción larga del producto" required></textarea>
+
+            <label for="PROD_DESCCORTA">Descripción corta:</label>
+            <textarea id="PROD_DESCCORTA" name="PROD_DESCCORTA" placeholder="Descripción breve" required></textarea>
+
+            <label for="PROD_BRAND">Marca:</label>
+            <input id="PROD_BRAND" name="PROD_BRAND" placeholder="Marca del producto" required />
+
+            <label for="PROD_IMG">URL de imagen:</label>
+            <input id="PROD_IMG" name="PROD_IMG" type="url" placeholder="URL de la imagen del producto" required />
+
+            <button type="submit">Guardar</button>
+        </form>
+    </div>
+
+    <script src="productos.js"></script>
+</body>
+
+</html>

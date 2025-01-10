@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ChocoLush</title>
+    <link rel="stylesheet" href="../css/estilo.css">
+    <link id="oscuro-stylesheet" rel="stylesheet" href="../css/oscuro.css" disabled>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=DynaPuff:wght@400..700&family=Oswald:wght@200..700&display=swap"
+        rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <script src="../javascript/guardarUltimaPagina.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <script src="../node_modules/jquery/dist/jquery.min.js"></script>
+
+</head>
+
+<body>
+    <div class="nav-bar">
+        <nav class="main-nav">
+            <!-- Logo -->
+            <div class="logo-container">
+                <a href="../inicio.html">
+                    <img class="logo" src="../images/ChocoLushLogo.png" alt="ChocoLushLogo">
+                </a>
+
+            </div>
+
+            <!-- Hamburger Icon -->
+            <div class="hamburger" id="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+
+            <!-- Navigation Links -->
+            <ul class="nav-links" id="nav-links">
+                <li><a href="../inicio.html">Home</a></li>
+                <li><a href="menu.html">Brands</a></li>
+                <li><a href="ordenar.html">Productos</a></li>
+            </ul>
+
+            <!-- User Icon -->
+            <div class="user-menu-container">
+                <a href="inicioSesion.html" class="user-icon" id="user-icon" title="Iniciar sesión">
+                    <i class="fa fa-user"></i>
+                </a>
+            </div>
+        </nav>
+    </div>
+
+    <!-- Off-canvas menu for mobile -->
+    <div class="offcanvas-menu" id="offcanvasMenu">
+        <ul class="offcanvas-nav-links">
+            <li><a href="../inicio.html">Home</a></li>
+            <li><a href="menu.html">Brands</a></li>
+            <li><a href="ordenar.html">Productos</a></li>
+            <li>
+                <a href="inicioSesion.html">
+                    <i class="fa fa-user"></i>
+                </a>
+            </li>
+        </ul>
+    </div>
+
+    <!-- Overlay -->
+    <div class="offcanvas-overlay" id="offcanvasOverlay"></div>
+
+    <div class="main-container">
+        <!-- Sección de productos -->
+        <section class="productos">
+            <!-- Aquí se insertará dinámicamente el contenido -->
+        </section>
+
+        <!-- Barra lateral (aside) -->
+        <aside>
+            <div class="carrito">
+                <h2>Carrito</h2>
+            </div>
+            <div class="productosCarrito">
+                <!-- Mensaje que aparece cuando el carrito está vacío -->
+                <p class="carrito-vacio" style="text-align: center; font-size: 1.2em; color: gray;">
+                    El carrito está vacío...
+                </p>
+            </div>
+            <div class="resumen">
+                <div class="subtotal">
+                    <span>Subtotal</span>
+                    <span>$0.00</span>
+                </div>
+                <div class="iva">
+                    <span>IVA</span>
+                    <span>$0.00</span>
+                </div>
+                <div class="total">
+                    <span>Total</span>
+                    <span>$0.00</span>
+                </div>
+                <button class="btnContinuar" disabled>Continuar</button>
+            </div>
+        </aside>
+        <!-- Burbuja flotante para pantallas pequeñas -->
+        <div id="carrito-burbuja" class="carrito-burbuja">
+            <i class="fas fa-shopping-cart"></i>
+            <span id="carrito-cantidad">0</span>
+        </div>
+
+        <!-- Ventana emergente del carrito -->
+        <div id="carrito-ventana" class="carrito-ventana oculto">
+            <div class="carrito-ventana-header">
+                <h2>Tu Carrito</h2>
+            </div>
+            <div class="carrito-ventana-contenido">
+                <div class="productosCarrito">
+                    <!-- Aquí se renderizan los productos -->
+                </div>
+                <div class="resumen">
+                    <div class="subtotal">
+                        <span>Subtotal</span>
+                        <span>$0.00</span>
+                    </div>
+                    <div class="iva">
+                        <span>IVA</span>
+                        <span>$0.00</span>
+                    </div>
+                    <div class="total">
+                        <span>Total</span>
+                        <span>$0.00</span>
+                    </div>
+                    <button class="btnContinuar" disabled>Continuar</button>
+                </div>
+            </div>
+        </div>
+
+    </div>
+    <div class="pie">
+        <footer>&copy 2025 ChocoLush - Todos los derechos reservados</footer>
+    </div>
+
+    <script src="../javascript/menuHamburguesa.js"></script>
+    <script src="../javascript/carrito.js"></script>
+    <script src="../javascript/carritoBurbuja.js"></script>
+    <script src="../javascript/API.js"></script>
+
+</body>
+
+</html>

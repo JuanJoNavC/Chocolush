@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Restaurante</title>
+    <link rel="stylesheet" href="../css/estilo.css">
+    <link id="oscuro-stylesheet" rel="stylesheet" href="../css/oscuro.css" disabled>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <script src="../javascript/guardarUltimaPagina.js"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Playwrite+GB+S:ital,wght@0,100..400;1,100..400&display=swap"
+        rel="stylesheet">
+
+</head>
+
+<body>
+    <div class="header">
+        <header>
+            <h1>Sabores de Hogar</h1>
+            <nav class="navigation">
+                <ul>
+                    <li><a href="../inicio.html">Inicio</a></li>
+                    <li><a href="menu.html">Menú</a></li>
+                    <li><a href="ordenar.html">Ordena aquí</a></li>
+                </ul>
+            </nav>
+            <!-- Contenedor para el ícono de usuario y menú desplegable -->
+            <div class="user-menu-container">
+                <!-- Ícono de usuario -->
+                <a href="inicioSesion.html" class="user-icon" id="user-icon" title="Iniciar sesión">
+                    <i class="fa fa-user"></i>
+                </a>
+
+                <!-- Menú desplegable que aparecerá solo si está logueado -->
+                <div class="user-dropdown" id="user-dropdown" style="display: none;">
+                    <button onclick="cerrarSesion()">Cerrar Sesión</button>
+                </div>
+            </div>
+        </header>
+    </div>
+    <nav id="menuicono">
+        <img src="../images/menuHamburgesa.png" width="35" height="28" id="menu-img">
+    </nav>
+    <br>
+    <div class="marco">
+        <div class="image-container">
+            <article class="Reservar">
+                <video id="miVideo" class="videoReservar" width="450" height="400">
+                    <source src="../images/Video2.mp4" type="video/mp4">
+                    Tu navegador no soporta el reproductor de vídeo.
+                </video>
+                <div class="video-controls">
+                    <!-- Control de Play/Pause -->
+                    <button id="playPauseBtn" class="playPauseBtn">
+                        <i class="fa fa-play"></i> <!-- Icono de Play -->
+                    </button>
+
+                    <!-- Barra de Progreso -->
+                    <input type="range" id="progressBar" class="progressBar" value="0" max="100" step="1">
+
+                    <div class="volume-container">
+                        <button id="muteButton" class="muteButton">
+                            <i class="fa fa-volume-up"></i> <!-- Icono de volumen -->
+                        </button>
+                        <input type="range" id="volumeControl" class="volumeControl" value="100" max="100" step="1">
+                    </div>
+
+                    <!-- Botones de Adelantar/Retroceder -->
+                    <button id="rewindBtn" class="rewindBtn">
+                        <i class="fa fa-undo"></i> -5s
+                    </button>
+                    <button id="forwardBtn" class="forwardBtn">
+                        <i class="fa fa-forward"></i> +5s
+                    </button>
+
+                    <!-- Tiempo Actual -->
+                    <span id="currentTimeDisplay">0:00</span> / <span id="durationDisplay">0:00</span>
+
+                    <!-- Botón de Pantalla Completa -->
+                    <button id="fullscreenBtn" class="fullscreenBtn">
+                        <i class="fa fa-expand"></i> <!-- Icono de Pantalla Completa -->
+                    </button>
+                </div>
+
+
+
+                <div class="reservarDerecha">
+                    <div class="titulo">
+                        <h2>Realiza tu reserva</h2>
+                    </div>
+                    <div class="texto">
+                        <p>Mesa para:
+                            <select id="opciones" name="opciones">
+                                <option value="opcion1">1</option>
+                                <option value="opcion2">2</option>
+                                <option value="opcion3">3</option>
+                                <option value="opcion4">4</option>
+                                <option value="opcion1">5</option>
+                                <option value="opcion2">6</option>
+                                <option value="opcion3">7</option>
+                                <option value="opcion4">8</option>
+                                <option value="opcion3">9</option>
+                                <option value="opcion4">10</option>
+                            </select>
+                        </p>
+                        <br>
+                        <label for="fecha">Fecha de la reserva:</label>
+                        <input type="date" id="fecha" name="fecha">
+                        <br><br>
+                        <p>Hora de la reserva:
+                            <select id="opc" name="opciones">
+                                <option value="hora1">12:00</option>
+                                <option value="hora2">13:00</option>
+                                <option value="hora3">14:00</option>
+                                <option value="hora4">15:00</option>
+                                <option value="hora5">16:00</option>
+                                <option value="hora6">17:00</option>
+                                <option value="hora7">18:00</option>
+                                <option value="hora8">19:00</option>
+                                <option value="hora9">20:00</option>
+                                <option value="hora10">21:00</option>
+                            </select>
+                        </p>
+                    </div>
+                    <br>
+                    <button class="btnReservar" onclick="guardarReserva()">Reservar</button>
+                </div>
+
+            </article>
+        </div>
+
+    </div>
+    <button class="boton-flotante" onclick="toggleDarkMode()">Modo Oscuro</button>
+    <br>
+    <div class="pie">
+        <footer>&copy 2024 Sabores de Hogar - Todos los derechos reservados</footer>
+    </div>
+    <script src="../javascript/menuHamburguesa.js"></script>
+    <script src="../javascript/reservas.js"></script>
+    <script src="../javascript/video.js"></script>
+    <script src="../javascript/modooscuro.js"></script>
+</body>
+
+</html>

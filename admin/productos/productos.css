@@ -1,0 +1,342 @@
+body {
+    font-family: "DynaPuff", system-ui;
+    background-color: #f4f4f4;
+    margin: 0;
+}
+
+.mainTable {
+    padding: 2em;
+}
+
+.nav-bar {
+    background-color: #ffffff;
+    padding: 1em;
+    width: 100%;
+    z-index: 100;
+    box-sizing: border-box;
+    position: static;
+    top: 0;
+    left: 0;
+    transition:
+        box-shadow 0.3s ease,
+        background-color 0.3s ease,
+        padding 0.3s ease;
+}
+
+
+.main-nav {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    width: 100%;
+    margin: auto;
+    position: relative;
+}
+
+.logo-container .logo {
+    width: 8em;
+    margin-left: 1em;
+}
+
+.nav-links {
+    list-style: none;
+    display: flex;
+    gap: 3em;
+    margin-left: 3em;
+    align-items: center;
+}
+
+/* Nav links */
+.nav-links li a {
+    text-decoration: none;
+    color: #3c0d0d;
+    font-size: 1em;
+    font-weight: 500;
+    display: flex;
+    align-items: center;
+    transition: color 0.3s;
+}
+
+.nav-links li a:hover {
+    color: #a0522d;
+}
+
+/* User menu */
+.user-menu-container {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    margin-left: auto;
+    margin-right: 3em;
+}
+
+.user-icon {
+    text-decoration: none;
+    color: #3c0d0d;
+    font-size: 1.5em;
+    margin-left: 1.5em;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: color 0.3s ease;
+}
+
+.user-icon:hover {
+    color: #a0522d;
+}
+
+
+/* Hamburger button */
+.hamburger {
+    display: none;
+    flex-direction: column;
+    cursor: pointer;
+    gap: 5px;
+    margin-left: auto;
+    margin-right: 1em;
+}
+
+.hamburger span {
+    width: 25px;
+    height: 3px;
+    background: #3c0d0d;
+    border-radius: 2px;
+    transition: all 0.3s ease;
+}
+
+/* Off-canvas menu styling */
+.offcanvas-menu {
+    position: fixed;
+    top: 0;
+    left: -250px;
+    /* hidden by default on the left */
+    width: 250px;
+    height: 100vh;
+    background-color: white;
+    box-shadow: 2px 0 5px rgba(0, 0, 0, 0.3);
+    padding-top: 3em;
+    box-sizing: border-box;
+    transition: left 0.3s ease;
+    z-index: 110;
+    overflow-y: auto;
+}
+
+/* When open, slide into view */
+.offcanvas-menu.open {
+    left: 0;
+}
+
+/* Overlay behind the offcanvas */
+.offcanvas-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.5);
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.3s ease;
+    z-index: 105;
+}
+
+.offcanvas-overlay.visible {
+    opacity: 1;
+    pointer-events: auto;
+}
+
+/* Offcanvas nav links */
+.offcanvas-nav-links {
+    list-style: none;
+    padding-left: 1.5em;
+}
+
+.offcanvas-nav-links li {
+    margin-bottom: 1.5em;
+}
+
+.offcanvas-nav-links li a {
+    text-decoration: none;
+    color: #3c0d0d;
+    font-size: 1.2em;
+    font-weight: 500;
+}
+
+/* Hover effect */
+.offcanvas-nav-links li a:hover {
+    color: #a0522d;
+}
+
+.offcanvas-nav-links .user-icon {
+    display: flex;
+    align-items: center;
+    gap: 0.5em;
+    color: #3c0d0d;
+    font-weight: 500;
+    font-size: 1.1em;
+    text-decoration: none;
+}
+
+.offcanvas-nav-links .user-icon:hover {
+    color: #a0522d;
+}
+
+/* Responsive: hide desktop nav links and show hamburger on mobile */
+@media (max-width: 768px) {
+    .nav-bar {
+        padding: 0.5em;
+    }
+
+    .main-nav {
+        flex-wrap: wrap;
+        max-height: 6em;
+    }
+
+    .nav-links {
+        display: none;
+    }
+
+    .hamburger {
+        display: flex;
+    }
+
+    /* Optionally hide user menu on mobile or style it */
+    .user-menu-container {
+        display: none;
+    }
+}
+
+h1 {
+    color: #5a2700;
+}
+
+a.btn {
+    display: inline-block;
+    margin-bottom: 1rem;
+    padding: 0.6rem 1.2rem;
+    background-color: #ffcc00;
+    color: #000;
+    border-radius: 5px;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    background: white;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+th,
+td {
+    padding: 1rem;
+    text-align: left;
+    border-bottom: 1px solid #ddd;
+}
+
+th {
+    background-color: #ffe082;
+    font-weight: bold;
+}
+
+td i {
+    margin-right: 0.5rem;
+    cursor: pointer;
+}
+
+td i.fa-edit {
+    color: #007bff;
+}
+
+td i.fa-trash-alt {
+    color: red;
+}
+
+/* Form styles */
+form#form-create,
+form#form-edit {
+    background: white;
+    max-width: 500px;
+    margin: 1rem auto 2rem auto;
+    padding: 2rem;
+    border-radius: 12px;
+    box-shadow: 0 4px 15px rgb(0 0 0 / 0.05);
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    box-sizing: border-box;
+}
+
+form#form-create input,
+form#form-create textarea,
+form#form-edit input,
+form#form-edit textarea {
+    padding: 0.6rem 1rem;
+    font-size: 1rem;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    outline-offset: 2px;
+    outline-color: transparent;
+    transition: outline-color 0.3s ease;
+    resize: vertical;
+}
+
+form#form-create input:focus,
+form#form-create textarea:focus,
+form#form-edit input:focus,
+form#form-edit textarea:focus {
+    outline-color: #ffcc00;
+    border-color: #ffcc00;
+}
+
+form#form-create button[type="submit"],
+form#form-edit button[type="submit"] {
+    background-color: #ffcc00;
+    color: #000;
+    border: none;
+    padding: 0.8rem;
+    font-size: 1.1rem;
+    font-weight: 700;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+form#form-create button[type="submit"]:hover,
+form#form-edit button[type="submit"]:hover {
+    background-color: #e6b800;
+}
+
+a[href="index.html"] {
+    display: inline-block;
+    margin-left: auto;
+    font-weight: 600;
+    color: #5a2700;
+    text-decoration: none;
+    margin-top: 0.5rem;
+}
+
+a[href="index.html"]:hover {
+    text-decoration: underline;
+}
+
+#productos-table img {
+    display: block;
+    max-height: 60px;
+    max-width: 100px;
+    object-fit: contain;
+    border-radius: 6px;
+}
+
+.field-help {
+    display: block;
+    font-size: 0.85rem;
+    color: #666;
+    margin-top: 0.2rem;
+    margin-bottom: 1rem;
+    font-style: italic;
+}

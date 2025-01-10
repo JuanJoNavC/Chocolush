@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Restaurante</title>
+    <link rel="stylesheet" href="../css/estilo.css">
+    <link id="oscuro-stylesheet" rel="stylesheet" href="../css/oscuro.css" disabled>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <script src="../javascript/guardarUltimaPagina.js"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Playwrite+GB+S:ital,wght@0,100..400;1,100..400&display=swap"
+        rel="stylesheet">
+
+</head>
+
+<body>
+    <div class="header">
+        <header>
+            <h1>Sabores de Hogar</h1>
+            <nav class="navigation">
+                <ul>
+                    <li><a href="../inicio.html">Inicio</a></li>
+                    <li><a href="menu.html">Menú</a></li>
+                    <li><a href="ordenar.html">Ordena aquí</a></li>
+                </ul>
+            </nav>
+            <!-- Contenedor para el ícono de usuario y menú desplegable -->
+            <div class="user-menu-container">
+                <!-- Ícono de usuario -->
+                <a href="inicioSesion.html" class="user-icon" id="user-icon" title="Iniciar sesión">
+                    <i class="fa fa-user"></i>
+                </a>
+
+                <!-- Menú desplegable que aparecerá solo si está logueado -->
+                <div class="user-dropdown" id="user-dropdown" style="display: none;">
+                    <button onclick="cerrarSesion()">Cerrar Sesión</button>
+                </div>
+            </div>
+        </header>
+    </div>
+    <nav id="menuicono">
+        <img src="../images/menuHamburgesa.png" width="35" height="28" id="menu-img">
+    </nav>
+    <br>
+    <div class="image-container">
+        <article class="articulo">
+            <iframe class="mapa"
+                src="https://www.google.com/maps/embed?pb=!1m16!1m12!1m3!1d3989.738720561195!2d-78.10501142938254!3d0.3619242901121861!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!2m1!1syahuarcocha!5e0!3m2!1sen!2sec!4v1733843330342!5m2!1sen!2sec"
+                allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+
+            <div class="descripcionDerecha">
+                <h2 id="title"><strong>Contáctanos</strong></h2>
+                <p id="text">¡Nos encantaría saber de ti! Ya sea que tengas alguna pregunta, quieras hacer una reserva,
+                    o simplemente deseas saber más sobre nuestro restaurante, estamos aquí para ayudarte. No dudes en
+                    ponerte en contacto con nosotros a través de cualquiera de los siguientes medios:
+                    <br><br>
+                    <strong>Teléfono:</strong>
+                    <br>
+                    (+593) 0979431161
+                    <br><br>
+                    <strong>Correo Electrónico:</strong>
+                    <br>
+                    nicogueva20@hotmail.com
+                    <br><br>
+                    <strong>Dirección:</strong>
+                    <br>
+                    Carretera a Yahuarcocha, Vía Laguna, Ibarra, Ecuador
+                    <br>
+                    Nuestro restaurante está ubicado en un hermoso entorno natural, cerca de la Laguna de Yahuarcocha,
+                    un lugar perfecto para disfrutar de una deliciosa comida en un ambiente relajante, rodeado de
+                    paisajes verdes y aire fresco.
+                    <br><br>
+                    <strong>Horario de Atención:</strong>
+                    <br>
+                    Lunes a Sábado: 12:00 AM - 10:00 PM
+                    <br>
+                    ¡Esperamos verte pronto!
+                </p>
+                <br>
+            </div>
+        </article>
+    </div>
+    <button class="boton-flotante" onclick="toggleDarkMode()">Modo Oscuro</button>
+    <br>
+    <div class="pie">
+        <footer>&copy 2024 Sabores de Hogar - Todos los derechos reservados</footer>
+    </div>
+    <script src="../javascript/menuHamburguesa.js"></script>
+    <script src="../javascript/modooscuro.js"></script>
+</body>
+
+</html>

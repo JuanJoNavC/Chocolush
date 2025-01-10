@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8" />
+    <title>Editar Cliente</title>
+    <link rel="stylesheet" href="clientes.css" />
+    <link href="https://fonts.googleapis.com/css2?family=DynaPuff&display=swap" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet" />
+    <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+</head>
+
+<body>
+
+
+
+    <div class="nav-bar">
+        <nav class="main-nav">
+            <!-- Logo -->
+            <div class="logo-container">
+                <a href="/inicio.html">
+                    <img class="logo" src="/images/ChocoLushLogo.png" alt="ChocoLushLogo">
+                </a>
+
+            </div>
+
+            <!-- Hamburger Icon -->
+            <div class="hamburger" id="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+
+            <!-- Navigation Links -->
+            <ul class="nav-links" id="nav-links">
+                <li><a href="/inicio.html">Home</a></li>
+                <li><a href="/pages/menu.html">Brands</a></li>
+                <li><a href="/pages/ordenar.html">Productos</a></li>
+                <li><a href="/admin/clientes/index.html">Clientes</a></li>
+                <li><a href="/admin/facturas/index.html">Factura</a></li>
+                <li><a href="/admin/productos/index.html">Productos</a></li>
+            </ul>
+
+            <!-- User Icon -->
+            <div class="user-menu-container">
+                <a href="/pages/inicioSesion.html" class="user-icon" id="user-icon" title="Iniciar sesión">
+                    <i class="fa fa-user"></i>
+                </a>
+            </div>
+        </nav>
+    </div>
+
+    <div class="offcanvas-menu" id="offcanvasMenu">
+        <ul class="offcanvas-nav-links">
+            <li><a href="/inicio.html">Home</a></li>
+            <li><a href="/pages/menu.html">Brands</a></li>
+            <li><a href="/pages/ordenar.html">Productos</a></li>
+            <li><a href="/admin/clientes/index.html">Clientes</a></li>
+            <li><a href="/admin/facturas/index.html">Factura</a></li>
+            <li><a href="/admin/productos/index.html">Productos</a></li>
+            <li>
+                <a href="/pages/inicioSesion.html">
+                    <i class="fa fa-user"></i>
+                </a>
+            </li>
+        </ul>
+    </div>
+
+    <!-- Overlay -->
+    <div class="offcanvas-overlay" id="offcanvasOverlay"></div>
+
+    <div class='mainTable'>
+        <h1>Editar Cliente</h1>
+        <a href="index.html" class="btn">← Volver a Clientes</a>
+
+        <form id="form-edit">
+            <input type="hidden" name="CLI_ID" />
+
+            <label for="CLI_NOMBRE">Nombre:</label>
+            <input id="CLI_NOMBRE" name="CLI_NOMBRE" placeholder="Nombre" required />
+
+            <label for="CLI_APELLIDO">Apellido:</label>
+            <input id="CLI_APELLIDO" name="CLI_APELLIDO" placeholder="Apellido" required />
+
+            <label for="CLI_FECHANACIMIENTO">Fecha de Nacimiento:</label>
+            <input id="CLI_FECHANACIMIENTO" name="CLI_FECHANACIMIENTO" type="date" required />
+
+            <label for="CLI_CORREO">Correo Electrónico:</label>
+            <input id="CLI_CORREO" name="CLI_CORREO" type="email" placeholder="Correo" required />
+
+            <label for="CLI_SEXO">Sexo:</label>
+            <input id="CLI_SEXO" name="CLI_SEXO" placeholder="Sexo (M/F/O)" required />
+
+            <label for="CLI_DIRECCION">Dirección:</label>
+            <input id="CLI_DIRECCION" name="CLI_DIRECCION" placeholder="Dirección" required />
+
+            <label for="CLI_CLAVE">Contraseña:</label>
+            <input id="CLI_CLAVE" name="CLI_CLAVE" type="password" placeholder="Contraseña" required />
+
+            <label for="CLI_CEDULA">Cédula:</label>
+            <input id="CLI_CEDULA" name="CLI_CEDULA" placeholder="Cédula" required />
+
+            <label for="CLI_TELEFONO">Teléfono:</label>
+            <input id="CLI_TELEFONO" name="CLI_TELEFONO" placeholder="Teléfono" required />
+
+            <label for="CLI_SECTOR">Sector:</label>
+            <input id="CLI_SECTOR" name="CLI_SECTOR" placeholder="Sector" required />
+
+            <button type="submit">Actualizar</button>
+        </form>
+    </div>
+
+
+    <script src="clientes.js"></script>
+    <script src="/javascript/menuHamburguesa.js"></script>
+    <script src="/javascript/offcanvasMenu.js"></script>
+</body>
+
+</html>

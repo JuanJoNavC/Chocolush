@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Clientes - Lista</title>
+    <link rel="stylesheet" href="clientes.css">
+    <link href="https://fonts.googleapis.com/css2?family=DynaPuff&display=swap" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet" />
+    <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+</head>
+
+<body>
+    <div class="nav-bar">
+        <nav class="main-nav">
+            <!-- Logo -->
+            <div class="logo-container">
+                <a href="/inicio.html">
+                    <img class="logo" src="/images/ChocoLushLogo.png" alt="ChocoLushLogo">
+                </a>
+
+            </div>
+
+            <!-- Hamburger Icon -->
+            <div class="hamburger" id="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+
+            <!-- Navigation Links -->
+            <ul class="nav-links" id="nav-links">
+                <li><a href="/inicio.html">Home</a></li>
+                <li><a href="/pages/menu.html">Brands</a></li>
+                <li><a href="/pages/ordenar.html">Productos</a></li>
+                <li><a href="/admin/clientes/index.html">Clientes</a></li>
+                <li><a href="/admin/facturas/index.html">Factura</a></li>
+                <li><a href="/admin/productos/index.html">Productos</a></li>
+            </ul>
+
+            <!-- User Icon -->
+            <div class="user-menu-container">
+                <a href="/pages/inicioSesion.html" class="user-icon" id="user-icon" title="Iniciar sesión">
+                    <i class="fa fa-user"></i>
+                </a>
+            </div>
+        </nav>
+    </div>
+
+    <div class="offcanvas-menu" id="offcanvasMenu">
+        <ul class="offcanvas-nav-links">
+            <li><a href="/inicio.html">Home</a></li>
+            <li><a href="/pages/menu.html">Brands</a></li>
+            <li><a href="/pages/ordenar.html">Productos</a></li>
+            <li><a href="/admin/clientes/index.html">Clientes</a></li>
+            <li><a href="/admin/facturas/index.html">Factura</a></li>
+            <li><a href="/admin/productos/index.html">Productos</a></li>
+            <li>
+                <a href="/pages/inicioSesion.html">
+                    <i class="fa fa-user"></i>
+                </a>
+            </li>
+        </ul>
+    </div>
+
+    <!-- Overlay -->
+    <div class="offcanvas-overlay" id="offcanvasOverlay"></div>
+
+    <div class='mainTable'>
+        <h1>Clientes</h1>
+        <a href="create.html" class="btn"><i class="fas fa-user-plus"></i> Nuevo Cliente</a>
+        <table id="clientes-table">
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Nombre</th>
+                    <th>Correo</th>
+                    <th>Acciones</th>
+                </tr>
+            </thead>
+            <tbody></tbody>
+        </table>
+    </div>
+
+
+    <script src="clientes.js"></script>
+    <script src="/javascript/menuHamburguesa.js"></script>
+    <script src="/javascript/offcanvasMenu.js"></script>
+</body>
+
+</html>

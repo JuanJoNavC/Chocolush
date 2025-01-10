@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Restaurante</title>
+    <link rel="stylesheet" href="../css/estilo.css">
+    <link id="oscuro-stylesheet" rel="stylesheet" href="../css/oscuro.css" disabled>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <script src="../javascript/guardarUltimaPagina.js"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Playwrite+GB+S:ital,wght@0,100..400;1,100..400&display=swap"
+        rel="stylesheet">
+
+</head>
+
+<body>
+    <div class="header">
+        <header>
+            <h1>Sabores de Hogar</h1>
+            <nav class="navigation">
+                <ul>
+                    <li><a href="../inicio.html">Inicio</a></li>
+                    <li><a href="menu.html">Menú</a></li>
+                    <li><a href="ordenar.html">Ordena aquí</a></li>
+                </ul>
+            </nav>
+            <!-- Contenedor para el ícono de usuario y menú desplegable -->
+            <div class="user-menu-container">
+                <!-- Ícono de usuario -->
+                <a href="inicioSesion.html" class="user-icon" id="user-icon" title="Iniciar sesión">
+                    <i class="fa fa-user"></i>
+                </a>
+
+                <!-- Menú desplegable que aparecerá solo si está logueado -->
+                <div class="user-dropdown" id="user-dropdown" style="display: none;">
+                    <button onclick="cerrarSesion()">Cerrar Sesión</button>
+                </div>
+            </div>
+        </header>
+    </div>
+    <nav id="menuicono">
+        <img src="../images/menuHamburgesa.png" width="35" height="28" id="menu-img">
+    </nav>
+    <br>
+    <div class="Reservas" id="listaReservas">
+        <div class="infoReserva">
+            <h2><strong>Reserva: 26 de Octubre</strong></h2>
+            <p><strong>Estado: </strong>Activa</p>
+            <p><strong>Hora: </strong>19:00</p>
+            <p><strong>Mesa para: </strong>4</p>
+            <div class="botonesReservas">
+                <button id="btnEditar">Editar</button>
+                <button id="btnCancelar">Cancelar</button>
+            </div>
+        </div>
+        <div class="infoReserva">
+            <h2><strong>Reserva: 16 de Noviembre</strong></h2>
+            <p><strong>Estado: </strong>Activa</p>
+            <p><strong>Hora: </strong>21:00</p>
+            <p><strong>Mesa para: </strong>2</p>
+            <div class="botonesReservas">
+                <button id="btnEditar">Editar</button>
+                <button id="btnCancelar">Cancelar</button>
+            </div>
+        </div>
+        <div class="infoReserva">
+            <h2><strong>Reserva: 21 de Noviembre</strong></h2>
+            <p><strong>Estado: </strong>Activa</p>
+            <p><strong>Hora: </strong>14:00</p>
+            <p><strong>Mesa para: </strong>5</p>
+            <div class="botonesReservas">
+                <button id="btnEditar">Editar</button>
+                <button id="btnCancelar">Cancelar</button>
+            </div>
+        </div>
+        <div class="infoReserva">
+            <h2><strong>Reserva: 16 de Octubre</strong></h2>
+            <p><strong>Estado: </strong>Caducada</p>
+            <p><strong>Hora: </strong>16:00</p>
+            <p><strong>Mesa para: </strong>3</p>
+        </div>
+        <div class="infoReserva">
+            <h2><strong>Reserva: 10 de Octubre</strong></h2>
+            <p><strong>Estado: </strong>Cancelada</p>
+            <p><strong>Hora: </strong>20:00</p>
+            <p><strong>Mesa para: </strong>8</p>
+        </div>
+        <div class="infoReserva">
+            <h2><strong>Reserva: 5 de Octubre</strong></h2>
+            <p><strong>Estado: </strong>Completada</p>
+            <p><strong>Hora: </strong>21:00</p>
+            <p><strong>Mesa para: </strong>4</p>
+            <div class="rating">
+                <input type="radio" id="star5" name="rating" value="5" />
+                <label for="star5" title="5 estrellas">★</label>
+                <input type="radio" id="star4" name="rating" value="4" />
+                <label for="star4" title="4 estrellas">★</label>
+                <input type="radio" id="star3" name="rating" value="3" />
+                <label for="star3" title="3 estrellas">★</label>
+                <input type="radio" id="star2" name="rating" value="2" />
+                <label for="star2" title="2 estrellas">★</label>
+                <input type="radio" id="star1" name="rating" value="1" />
+                <label for="star1" title="1 estrella">★</label>
+            </div>
+        </div>
+        <div class="infoReserva">
+            <h2><strong>Reserva: 26 de Septiembre</strong></h2>
+            <p><strong>Estado: </strong>Completada</p>
+            <p><strong>Hora: </strong>13:00</p>
+            <p><strong>Mesa para: </strong>2</p>
+            <div class="rating">
+                <input type="radio" id="estrella5" name="rating1" value="5" />
+                <label for="estrella5" title="5 estrellas">★</label>
+                <input type="radio" id="estrella4" name="rating1" value="4" />
+                <label for="estrella4" title="4 estrellas">★</label>
+                <input type="radio" id="estrella3" name="rating1" value="3" />
+                <label for="estrella3" title="3 estrellas">★</label>
+                <input type="radio" id="estrella2" name="rating1" value="2" />
+                <label for="estrella2" title="2 estrellas">★</label>
+                <input type="radio" id="estrella1" name="rating1" value="1" />
+                <label for="estrella1" title="1 estrella">★</label>
+            </div>
+        </div>
+    </div>
+    <div class="paginacion" style="text-align: center; margin-top: 20px;"></div>
+    <button id="btnLimpiarReservas" class="btn-limpiar">Limpiar Historial</button>
+    <button class="boton-flotante" onclick="toggleDarkMode()">Modo Oscuro</button>
+    <br>
+    <div class="pie">
+        <footer>&copy 2024 Sabores de Hogar - Todos los derechos reservados</footer>
+    </div>
+    <script src="../javascript/menuHamburguesa.js"></script>
+    <script src="../javascript/reservas.js"></script>
+    <script src="../javascript/modooscuro.js"></script>
+
+</body>
+
+</html>

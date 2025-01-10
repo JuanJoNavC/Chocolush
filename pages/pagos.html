@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pago</title>
+    <link rel="stylesheet" href="../css/estilo.css">
+    <link id="oscuro-stylesheet" rel="stylesheet" href="../css/oscuro.css" disabled>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=DynaPuff:wght@400..700&family=Oswald:wght@200..700&display=swap"
+        rel="stylesheet">
+    <script src="../javascript/guardarUltimaPagina.js">
+    </script>
+    <script src="../javascript/carrito.js"></script>
+    <script src="../node_modules/jquery/dist/jquery.min.js"></script>
+</head>
+
+<body>
+    <div class="nav-bar">
+        <nav class="main-nav">
+            <!-- Logo -->
+            <div class="logo-container">
+                <a href="../inicio.html">
+                    <img class="logo" src="../images/ChocoLushLogo.png" alt="ChocoLushLogo">
+                </a>
+
+            </div>
+
+            <!-- Hamburger Icon -->
+            <div class="hamburger" id="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+
+            <!-- Navigation Links -->
+            <ul class="nav-links" id="nav-links">
+                <li><a href="../inicio.html">Home</a></li>
+                <li><a href="menu.html">Brands</a></li>
+                <li><a href="ordenar.html">Productos</a></li>
+            </ul>
+
+            <!-- User Icon -->
+            <div class="user-menu-container">
+                <a href="inicioSesion.html" class="user-icon" id="user-icon" title="Iniciar sesión">
+                    <i class="fa fa-user"></i>
+                </a>
+            </div>
+        </nav>
+    </div>
+
+    <!-- Off-canvas menu for mobile -->
+    <div class="offcanvas-menu" id="offcanvasMenu">
+        <ul class="offcanvas-nav-links">
+            <li><a href="../inicio.html">Home</a></li>
+            <li><a href="menu.html">Brands</a></li>
+            <li><a href="ordenar.html">Productos</a></li>
+            <li>
+                <a href="inicioSesion.html">
+                    <i class="fa fa-user"></i>
+                </a>
+            </li>
+        </ul>
+    </div>
+
+    <!-- Overlay -->
+    <div class="offcanvas-overlay" id="offcanvasOverlay"></div>
+
+    <main class="mainPago">
+        <!-- Sección del carrito -->
+        <section class="datosPago1">
+            <h2>Resumen del carrito</h2>
+            <div class="productosCarrito" id="partePago"></div>
+            <div class="resumen">
+                <div class="subtotal">
+                    <span>Subtotal</span>
+                    <span>$0.00</span>
+                </div>
+                <div class="iva">
+                    <span>IVA</span>
+                    <span>$0.00</span>
+                </div>
+                <div class="total">
+                    <span>Total</span>
+                    <span>$0.00</span>
+                </div>
+            </div>
+        </section>
+
+        <!-- Formulario de datos de pago -->
+        <section class="datosPago">
+            <h2 class="tituloDatosPago">Datos de Pago</h2>
+            <form id="form-pago" onsubmit="procesarPago(event)">
+                <div class="textoPago">
+                    <label for="numero-cuenta">Numero de Cuenta</label>
+                    <input class="campoTextoPago" type="text" id="numero-cuenta" name="numero-cuenta" maxlength="16"
+                        inputmode="numeric" placeholder="Ingrese la cuenta con la que desea pagar" required>
+                </div>
+                <!-- Campo de dirección de entrega si el checkbox no está marcado -->
+                <div id="direccion-otros" class="textoPago">
+                    <label for="direccion">Dirección de entrega:</label>
+                    <input class="campoTextoPago" type="text" id="direccion" name="direccion"
+                        placeholder="Ingresa tu dirección de entrega">
+                </div>
+                <!-- Nuevo campo para dirección de entrega -->
+                <div class="textoPago">
+                    <label for="direccion-entrega">
+                        <input type="checkbox" id="direccion-entrega" name="direccion-entrega">
+                        Seleccionar para tener la misma dirección de entrega con la que se registró
+                    </label>
+                </div>
+
+                <div style="display: flex; justify-content: center;">
+                    <button class="btnContinuar" type="submit">Pagar</button>
+                </div>
+            </form>
+        </section>
+    </main>
+    <div class="pie">
+        <footer>&copy 2025 ChocoLush - Todos los derechos reservados</footer>
+    </div>
+
+    <script src="../javascript/pagos.js"></script>
+    <script src="../javascript/menuHamburguesa.js"></script>
+
+</body>
+
+</html>

@@ -1,0 +1,298 @@
+body {
+    font-family: "DynaPuff", system-ui;
+    background-color: #f4f4f4;
+    margin: 0;
+}
+
+.mainTable {
+    padding: 2em;
+}
+
+.nav-bar {
+    background-color: #ffffff;
+    padding: 1em;
+    width: 100%;
+    z-index: 100;
+    box-sizing: border-box;
+    position: static;
+    top: 0;
+    left: 0;
+    transition:
+        box-shadow 0.3s ease,
+        background-color 0.3s ease,
+        padding 0.3s ease;
+}
+
+
+.main-nav {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    width: 100%;
+    margin: auto;
+    position: relative;
+}
+
+.logo-container .logo {
+    width: 8em;
+    margin-left: 1em;
+}
+
+.nav-links {
+    list-style: none;
+    display: flex;
+    gap: 3em;
+    margin-left: 3em;
+    align-items: center;
+}
+
+/* Nav links */
+.nav-links li a {
+    text-decoration: none;
+    color: #3c0d0d;
+    font-size: 1em;
+    font-weight: 500;
+    display: flex;
+    align-items: center;
+    transition: color 0.3s;
+}
+
+.nav-links li a:hover {
+    color: #a0522d;
+}
+
+/* User menu */
+.user-menu-container {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    margin-left: auto;
+    margin-right: 3em;
+}
+
+.user-icon {
+    text-decoration: none;
+    color: #3c0d0d;
+    font-size: 1.5em;
+    margin-left: 1.5em;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: color 0.3s ease;
+}
+
+.user-icon:hover {
+    color: #a0522d;
+}
+
+
+/* Hamburger button */
+.hamburger {
+    display: none;
+    flex-direction: column;
+    cursor: pointer;
+    gap: 5px;
+    margin-left: auto;
+    margin-right: 1em;
+}
+
+.hamburger span {
+    width: 25px;
+    height: 3px;
+    background: #3c0d0d;
+    border-radius: 2px;
+    transition: all 0.3s ease;
+}
+
+/* Off-canvas menu styling */
+.offcanvas-menu {
+    position: fixed;
+    top: 0;
+    left: -250px;
+    /* hidden by default on the left */
+    width: 250px;
+    height: 100vh;
+    background-color: white;
+    box-shadow: 2px 0 5px rgba(0, 0, 0, 0.3);
+    padding-top: 3em;
+    box-sizing: border-box;
+    transition: left 0.3s ease;
+    z-index: 110;
+    overflow-y: auto;
+}
+
+/* When open, slide into view */
+.offcanvas-menu.open {
+    left: 0;
+}
+
+/* Overlay behind the offcanvas */
+.offcanvas-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.5);
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.3s ease;
+    z-index: 105;
+}
+
+.offcanvas-overlay.visible {
+    opacity: 1;
+    pointer-events: auto;
+}
+
+/* Offcanvas nav links */
+.offcanvas-nav-links {
+    list-style: none;
+    padding-left: 1.5em;
+}
+
+.offcanvas-nav-links li {
+    margin-bottom: 1.5em;
+}
+
+.offcanvas-nav-links li a {
+    text-decoration: none;
+    color: #3c0d0d;
+    font-size: 1.2em;
+    font-weight: 500;
+}
+
+/* Hover effect */
+.offcanvas-nav-links li a:hover {
+    color: #a0522d;
+}
+
+.offcanvas-nav-links .user-icon {
+    display: flex;
+    align-items: center;
+    gap: 0.5em;
+    color: #3c0d0d;
+    font-weight: 500;
+    font-size: 1.1em;
+    text-decoration: none;
+}
+
+.offcanvas-nav-links .user-icon:hover {
+    color: #a0522d;
+}
+
+/* Responsive: hide desktop nav links and show hamburger on mobile */
+@media (max-width: 768px) {
+    .nav-bar {
+        padding: 0.5em;
+    }
+
+    .main-nav {
+        flex-wrap: wrap;
+        max-height: 6em;
+    }
+
+    .nav-links {
+        display: none;
+    }
+
+    .hamburger {
+        display: flex;
+    }
+
+    /* Optionally hide user menu on mobile or style it */
+    .user-menu-container {
+        display: none;
+    }
+}
+
+
+h1,
+h2 {
+    color: #5a2700;
+}
+
+a.btn,
+.btn-detalle {
+    display: inline-block;
+    margin-bottom: 1rem;
+    padding: 0.6rem 1.2rem;
+    background-color: #ffcc00;
+    color: #000;
+    border-radius: 5px;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+a.btn:hover,
+.btn-detalle:hover {
+    background-color: #e6b800;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    background: white;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    margin-bottom: 1rem;
+}
+
+th,
+td {
+    padding: 1rem;
+    text-align: left;
+    border-bottom: 1px solid #ddd;
+}
+
+th {
+    background-color: #ffe082;
+    font-weight: bold;
+}
+
+#facturas-table {
+    width: 100%;
+    border-collapse: collapse;
+    background: white;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+    margin-bottom: 2rem;
+}
+
+#facturas-table thead th {
+    background-color: #ffe082;
+    font-weight: bold;
+    padding: 1rem;
+    text-align: left;
+    border-bottom: 2px solid #ffcc00;
+}
+
+#facturas-table tbody td {
+    padding: 0.9rem 1rem;
+    border-bottom: 1px solid #ddd;
+    vertical-align: middle;
+}
+
+#facturas-table tbody tr:hover {
+    background-color: #fff3b0;
+}
+
+a.btn-detalle {
+    display: inline-block;
+    padding: 0.4rem 0.8rem;
+    background-color: #ffcc00;
+    color: #000;
+    font-weight: 600;
+    border-radius: 6px;
+    text-decoration: none;
+    transition: background-color 0.3s ease;
+}
+
+a.btn-detalle:hover {
+    background-color: #e6b800;
+    color: #000;
+    text-decoration: none;
+}
