@@ -51,10 +51,13 @@ document.querySelector('.login-button').addEventListener('click', async (event) 
         const ultimaPagina = sessionStorage.getItem('ultimaPagina');
 
         if (carrito.length === 0 || !continuarPresionado) {
-            if (ultimaPagina) {
+            if (emailInput.value.trim().toLowerCase() === "admin@gmail.com") {
+                window.location.href = '../admin/productos/index.html';
+            }
+            else if (ultimaPagina) {
                 window.location.href = ultimaPagina;
             } else {
-                window.location.href = 'inicio.html';
+                window.location.href = 'index.html';
             }
         } else {
             window.location.href = 'pagos.html';

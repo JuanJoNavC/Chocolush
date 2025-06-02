@@ -129,7 +129,7 @@ async function procesarPago(event) {
             success: function (response) {
                 alert('Pago procesado exitosamente. ¡Gracias por tu compra!');
                 sessionStorage.removeItem('carrito'); // Limpiar el carrito después de la compra
-                /*window.location.href = '/inicio.html';*/
+                /*window.location.href = '/index.html';*/
 
                 /*Para ver el numero de esta ultima factura*/
                 setTimeout(() => {
