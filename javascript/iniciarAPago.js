@@ -52,7 +52,7 @@ document.querySelector('.login-button').addEventListener('click', async (event) 
 
         if (carrito.length === 0 || !continuarPresionado) {
             if (emailInput.value.trim().toLowerCase() === "admin@gmail.com") {
-                window.location.href = '../admin/productos/index.html';
+                window.location.href = '../admin/index.html';
             }
             else if (ultimaPagina) {
                 window.location.href = ultimaPagina;

@@ -1,0 +1,400 @@
+body {
+    font-family: "DynaPuff", system-ui;
+    background-color: #f4f4f4;
+    margin: 0;
+}
+
+
+.nav-bar {
+    background-color: #ffffff;
+    padding: 1em;
+    width: 100%;
+    z-index: 100;
+    box-sizing: border-box;
+    position: static;
+    top: 0;
+    left: 0;
+    transition:
+        box-shadow 0.3s ease,
+        background-color 0.3s ease,
+        padding 0.3s ease;
+}
+
+
+.main-nav {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    width: 100%;
+    margin: auto;
+    position: relative;
+}
+
+.logo-container .logo {
+    width: 8em;
+    margin-left: 1em;
+}
+
+.nav-links {
+    list-style: none;
+    display: flex;
+    gap: 3em;
+    margin-left: 3em;
+    align-items: center;
+}
+
+/* Nav links */
+.nav-links li a {
+    text-decoration: none;
+    color: #3c0d0d;
+    font-size: 1em;
+    font-weight: 500;
+    display: flex;
+    align-items: center;
+    transition: color 0.3s;
+}
+
+.nav-links li a:hover {
+    color: #a0522d;
+}
+
+/* User menu */
+.user-menu-container {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    margin-left: auto;
+    margin-right: 3em;
+}
+
+.user-icon {
+    text-decoration: none;
+    color: #3c0d0d;
+    font-size: 1.5em;
+    margin-left: 1.5em;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: color 0.3s ease;
+}
+
+.user-icon:hover {
+    color: #a0522d;
+}
+
+
+/* Hamburger button */
+.hamburger {
+    display: none;
+    flex-direction: column;
+    cursor: pointer;
+    gap: 5px;
+    margin-left: auto;
+    margin-right: 1em;
+}
+
+.hamburger span {
+    width: 25px;
+    height: 3px;
+    background: #3c0d0d;
+    border-radius: 2px;
+    transition: all 0.3s ease;
+}
+
+/* Off-canvas menu styling */
+.offcanvas-menu {
+    position: fixed;
+    top: 0;
+    left: -250px;
+    /* hidden by default on the left */
+    width: 250px;
+    height: 100vh;
+    background-color: white;
+    box-shadow: 2px 0 5px rgba(0, 0, 0, 0.3);
+    padding-top: 3em;
+    box-sizing: border-box;
+    transition: left 0.3s ease;
+    z-index: 110;
+    overflow-y: auto;
+}
+
+/* When open, slide into view */
+.offcanvas-menu.open {
+    left: 0;
+}
+
+/* Overlay behind the offcanvas */
+.offcanvas-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.5);
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.3s ease;
+    z-index: 105;
+}
+
+.offcanvas-overlay.visible {
+    opacity: 1;
+    pointer-events: auto;
+}
+
+/* Offcanvas nav links */
+.offcanvas-nav-links {
+    list-style: none;
+    padding-left: 1.5em;
+}
+
+.offcanvas-nav-links li {
+    margin-bottom: 1.5em;
+}
+
+.offcanvas-nav-links li a {
+    text-decoration: none;
+    color: #3c0d0d;
+    font-size: 1.2em;
+    font-weight: 500;
+}
+
+/* Hover effect */
+.offcanvas-nav-links li a:hover {
+    color: #a0522d;
+}
+
+.offcanvas-nav-links .user-icon {
+    display: flex;
+    align-items: center;
+    gap: 0.5em;
+    color: #3c0d0d;
+    font-weight: 500;
+    font-size: 1.1em;
+    text-decoration: none;
+}
+
+.offcanvas-nav-links .user-icon:hover {
+    color: #a0522d;
+}
+
+/* Responsive: hide desktop nav links and show hamburger on mobile */
+@media (max-width: 768px) {
+    .nav-bar {
+        padding: 0.5em;
+    }
+
+    .main-nav {
+        flex-wrap: wrap;
+        max-height: 6em;
+    }
+
+    .nav-links {
+        display: none;
+    }
+
+    .hamburger {
+        display: flex;
+    }
+
+    /* Optionally hide user menu on mobile or style it */
+    .user-menu-container {
+        display: none;
+    }
+}
+
+
+/* Hero Section */
+.hero-container {
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    overflow: hidden;
+}
+
+.hero-container img.hero {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+.hero-blur-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.4);
+    z-index: 2;
+}
+
+.hero-text {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: white;
+    font-size: 2.5rem;
+    font-weight: 700;
+    z-index: 3;
+    text-align: center;
+}
+
+.hero-modal {
+    position: absolute;
+    top: 50%;
+    right: 40px;
+    transform: translateY(-50%);
+    background-color: rgba(59, 2, 13, 0.7);
+    padding: 30px 25px;
+    border-radius: 0.5em;
+    color: white;
+    max-width: 320px;
+    z-index: 3;
+    text-align: center;
+}
+
+.hero-modal h2 {
+    margin-bottom: 25px;
+    font-size: 1.8rem;
+}
+
+.hero-modal-buttons {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    justify-content: center;
+}
+
+.hero-modal-buttons a {
+    display: inline-block;
+    padding: 12px 20px;
+    border-radius: 5px;
+    font-size: 1rem;
+    text-decoration: none;
+    color: white;
+    text-align: center;
+    transition: background-color 0.3s ease;
+}
+
+.hero-modal-buttons a.btn-brown {
+    background-color: #5c1c28;
+}
+
+.hero-modal-buttons a.btn-brown:hover {
+    background-color: #77263a;
+}
+
+.hero-modal-buttons a.btn-yellow {
+    background-color: #ffca02;
+}
+
+.hero-modal-buttons a.btn-yellow:hover {
+    background-color: #ffd940;
+}
+
+/* Main Container */
+.main-container {
+    padding: 50px 10%;
+    background-color: #fff;
+}
+
+.card-container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+.card {
+    background-color: #f8f3f0;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
+}
+
+.card img {
+    width: 100%;
+    height: 25em;
+    max-height: 25em; /* Set a max height for consistency */
+    object-fit: cover; /* Ensure images don't stretch */
+    border-radius: 8px;
+}
+
+.card h3 {
+    margin-top: 20px;
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: #333; /* Set a dark color for the text */
+    text-decoration: none; /* Remove any text decoration like underlines */
+    border: none; /* Remove any border */
+}
+
+a{
+    text-decoration: none;
+}
+
+/* Footer */
+footer {
+    background-color: #ffffff;
+    color: #3f000b;
+    text-align: center;
+    padding: 20px;
+    margin-top: 50px;
+    font-size: 1rem;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .hero-text {
+        font-size: 1.8rem;
+    }
+
+    .hero-modal {
+        max-width: 80%;
+        right: 20px;
+    }
+
+    .card-container {
+        gap: 10px;
+        grid-template-columns: repeat(2, 1fr); /* Change to 2 columns on tablets */
+    }
+
+    .card {
+        width: 100%;
+    }
+}
+
+@media (max-width: 480px) {
+    .hero-text {
+        font-size: 1.5rem;
+    }
+
+    .hero-modal {
+        max-width: 90%;
+        padding: 20px;
+    }
+
+    .card-container {
+        gap: 5px;
+        grid-template-columns: 1fr; /* Change to 1 column on mobile */
+    }
+
+    .card {
+        width: 100%;
+        padding: 15px;
+    }
+
+    .card h3 {
+        font-size: 1.2rem;
+    }
+}

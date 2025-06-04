@@ -53,7 +53,6 @@ function validarCuenta(numeroCuenta, callback) {
 // Procesar el pago con validaciones
 async function procesarPago(event) {
     event.preventDefault();
-
     const numeroCuenta = document.getElementById('numero-cuenta').value.trim();
     /*{
         "carrito": {
@@ -98,7 +97,7 @@ async function procesarPago(event) {
             }
         })
     });
-    function realizarCompra(cliente, carrito, numeroCuenta = 119) {
+    function realizarCompra(cliente, carrito, numeroCuenta) {
         const direccionEntrega = document.getElementById('direccion-entrega');
         const metodoPago = "Transferencia Bancaria";
 
@@ -175,13 +174,10 @@ async function procesarPago(event) {
             },
             error: function (xhr) {
                 console.error('Error al procesar la compra interna:', xhr.responseText);
-                alert('Error al procesar la compra interna. Por favor, intenta nuevamente.');
+                alert('Error al procesar la compra interna. Por favor, intenta nuevamente.', xhr.responseText);
             }
         });
     }
-
-
-
 
 }
 

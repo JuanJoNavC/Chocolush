@@ -274,37 +274,46 @@
 /* Button base */
 .btn {
     flex: 1;
-    padding: 12px 0;
+    padding: 12px 20px; /* Slightly more padding for a balanced feel */
     font-size: 1rem;
     font-weight: 600;
     border: none;
-    border-radius: 0.5em;
+    border-radius: 0.75em; /* Slightly rounded for a smoother look */
     cursor: pointer;
-    transition: background-color 0.3s ease;
+    transition: background-color 0.3s ease, transform 0.2s ease, box-shadow 0.3s ease;
     color: #3b020d;
     text-decoration: none;
-    /* default text color brown, overwritten below */
+    align-content: center;
+    display: inline-block; /* Ensures proper alignment */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Light shadow for depth */
 }
 
 /* Brown button */
 .btn-brown {
     background-color: #5c1c28;
     color: #ffca02;
+    border: 2px solid #5c1c28; /* Border matches background color */
 }
 
 .btn-brown:hover {
     background-color: #77263a;
+    transform: translateY(-2px); /* Subtle lift effect */
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2); /* Deeper shadow on hover */
 }
 
 /* Yellow button */
 .btn-yellow {
     background-color: #ffca02;
     color: #3b020d;
+    border: 2px solid #ffca02; /* Border matches background color */
 }
 
 .btn-yellow:hover {
     background-color: #ffd940;
+    transform: translateY(-2px); /* Subtle lift effect */
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2); /* Deeper shadow on hover */
 }
+
 
 @media (max-width: 768px) {
     .hero-container {
@@ -415,6 +424,115 @@
         width: 80%;
     }
 }
+
+#wrapper, #loader {
+  /* From Uiverse.io by mobinkakei */ 
+.wrapper {
+  width: 200px;
+  height: 60px;
+  position: relative;
+  z-index: 1;
+}
+
+.circle {
+  width: 20px;
+  height: 20px;
+  position: absolute;
+  border-radius: 50%;
+  background-color: #fff;
+  left: 15%;
+  transform-origin: 50%;
+  animation: circle7124 .5s alternate infinite ease;
+}
+
+@keyframes circle7124 {
+  0% {
+    top: 60px;
+    height: 5px;
+    border-radius: 50px 50px 25px 25px;
+    transform: scaleX(1.7);
+  }
+
+  40% {
+    height: 20px;
+    border-radius: 50%;
+    transform: scaleX(1);
+  }
+
+  100% {
+    top: 0%;
+  }
+}
+
+.circle:nth-child(2) {
+  left: 45%;
+  animation-delay: .2s;
+}
+
+.circle:nth-child(3) {
+  left: auto;
+  right: 15%;
+  animation-delay: .3s;
+}
+
+.shadow {
+  width: 20px;
+  height: 4px;
+  border-radius: 50%;
+  background-color: rgba(0,0,0,0.9);
+  position: absolute;
+  top: 62px;
+  transform-origin: 50%;
+  z-index: -1;
+  left: 15%;
+  filter: blur(1px);
+  animation: shadow046 .5s alternate infinite ease;
+}
+
+@keyframes shadow046 {
+  0% {
+    transform: scaleX(1.5);
+  }
+
+  40% {
+    transform: scaleX(1);
+    opacity: .7;
+  }
+
+  100% {
+    transform: scaleX(.2);
+    opacity: .4;
+  }
+}
+
+.shadow:nth-child(4) {
+  left: 45%;
+  animation-delay: .2s
+}
+
+.shadow:nth-child(5) {
+  left: auto;
+  right: 15%;
+  animation-delay: .3s;
+}
+}
+
+
+#loader {
+  position: fixed !important;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background: rgba(0, 0, 0, 0.4);
+  display: none;
+  justify-content: center;
+  align-items: center;
+  z-index: 9999;
+  width: 200px;
+  height: 60px;
+}
+
+
+
+
 
 .brown-wave {
     position: relative;
