@@ -84,21 +84,81 @@ $(document).ready(function () {
 
 $(document).ready(function () {
     $('#register-form').on('submit', function (e) {
-        e.preventDefault(); // Stop form from submitting normally
+        e.preventDefault(); // Detener el envío normal del formulario
 
+        // Obtener los valores de los campos
+        const nombre = $('#nombre').val().trim();
+        const apellido = $('#apellido').val().trim();
+        const fechaNacimiento = $('#fecha_nacimiento').val();
+        const correo = $('#email').val().trim();
+        const sexo = $('#sexo').val();
+        const direccion = $('#direccion').val().trim();
+        const clave = $('#password').val();
+        const cedula = $('#cedula').val().trim();
+        const telefono = $('#telefono').val().trim();
+        const sector = $('#sector').val().trim();
+
+        // Expresiones regulares
+        const soloLetras = /^[a-zA-ZáéíóúÁÉÍÓÚñÑ\s]+$/;
+        const soloNumeros = /^\d+$/;
+        const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+
+        // Validaciones
+        if (!nombre || !apellido || !fechaNacimiento || !correo || !sexo || !direccion || !clave || !cedula || !telefono || !sector) {
+            alert('Por favor completa todos los campos.');
+            return;
+        }
+
+        if (!soloLetras.test(nombre)) {
+            alert('El nombre solo debe contener letras.');
+            return;
+        }
+
+        if (!soloLetras.test(apellido)) {
+            alert('El apellido solo debe contener letras.');
+            return;
+        }
+
+        if (!soloLetras.test(sector)) {
+            alert('El sector solo debe contener letras.');
+            return;
+        }
+
+        if (!soloNumeros.test(cedula)) {
+            alert('La cédula solo debe contener números.');
+            return;
+        }
+
+        if (!soloNumeros.test(telefono)) {
+            alert('El teléfono solo debe contener números.');
+            return;
+        }
+
+        if (!emailRegex.test(correo)) {
+            alert('Por favor ingresa un correo electrónico válido.');
+            return;
+        }
+
+        if (clave.length < 6) {
+            alert('La contraseña debe tener al menos 6 caracteres.');
+            return;
+        }
+
+        // Si pasa todas las validaciones, construir el objeto
         const clienteData = {
-            CLI_NOMBRE: $('#nombre').val(),
-            CLI_APELLIDO: $('#apellido').val(),
-            CLI_FECHANACIMIENTO: $('#fecha_nacimiento').val(),
-            CLI_CORREO: $('#email').val(),
-            CLI_SEXO: $('#sexo').val(),
-            CLI_DIRECCION: $('#direccion').val(),
-            CLI_CLAVE: $('#password').val(),
-            CLI_CEDULA: $('#cedula').val(),
-            CLI_TELEFONO: $('#telefono').val(),
-            CLI_SECTOR: $('#sector').val()
+            CLI_NOMBRE: nombre,
+            CLI_APELLIDO: apellido,
+            CLI_FECHANACIMIENTO: fechaNacimiento,
+            CLI_CORREO: correo,
+            CLI_SEXO: sexo,
+            CLI_DIRECCION: direccion,
+            CLI_CLAVE: clave,
+            CLI_CEDULA: cedula,
+            CLI_TELEFONO: telefono,
+            CLI_SECTOR: sector
         };
 
+        // Enviar los datos al backend
         $.ajax({
             url: 'http://backendchocolush.runasp.net/api/Cliente',
             type: 'POST',
@@ -106,7 +166,6 @@ $(document).ready(function () {
             data: JSON.stringify(clienteData),
             success: function (response) {
                 alert('¡Cliente registrado con éxito!');
-                // Optional: redirect to login or another page
                 window.location.href = 'inicioSesion.html';
             },
             error: function (xhr, status, error) {
@@ -114,13 +173,5 @@ $(document).ready(function () {
                 alert('Error al registrar cliente. Por favor revisa los datos e inténtalo de nuevo.');
             }
         });
-    });
-
-    // Toggle password visibility
-    $('#toggle-password').on('click', function () {
-        const passwordInput = $('#password');
-        const type = passwordInput.attr('type') === 'password' ? 'text' : 'password';
-        passwordInput.attr('type', type);
-        $(this).find('i').toggleClass('fa-eye fa-eye-slash');
     });
 });
