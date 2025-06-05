@@ -1,4 +1,4 @@
-const apiUrl = 'http://backendchocolush.runasp.net/api/Producto';
+const apiUrl = 'https://backendchocolush.runasp.net/api/Producto';
 
 // Listar productos
 if (window.location.pathname.includes('index.html')) {

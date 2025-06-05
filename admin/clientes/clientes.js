@@ -1,4 +1,4 @@
-const apiUrl = 'http://backendchocolush.runasp.net/api/Cliente';
+const apiUrl = 'https://backendchocolush.runasp.net/api/Cliente';
 
 // Cargar clientes (Read)
 if (window.location.pathname.includes('index.html')) {

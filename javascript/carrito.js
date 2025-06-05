@@ -139,7 +139,7 @@ document.querySelectorAll('.btnContinuar').forEach((boton) => {
             }
 
             // Obtener los productos con su stock actual desde la API pública
-            const response = await fetch('http://backendchocolush.runasp.net/api/Producto', {
+            const response = await fetch('https://backendchocolush.runasp.net/api/Producto', {
                 method: 'GET',
                 headers: { 'Content-Type': 'application/json' }
             });

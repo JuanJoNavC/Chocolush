@@ -1,7 +1,7 @@
 $(document).ready(function () {
 
 
-    const apiBase = "http://backendchocolush.runasp.net/api/Producto";
+    const apiBase = "https://backendchocolush.runasp.net/api/Producto";
 
     function getBrandFromURL() {
         const params = new URLSearchParams(window.location.search);
@@ -160,7 +160,7 @@ $(document).ready(function () {
 
         // Enviar los datos al backend
         $.ajax({
-            url: 'http://backendchocolush.runasp.net/api/Cliente',
+            url: 'https://backendchocolush.runasp.net/api/Cliente',
             type: 'POST',
             contentType: 'application/json',
             data: JSON.stringify(clienteData),

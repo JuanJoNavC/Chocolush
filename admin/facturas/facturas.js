@@ -1,6 +1,6 @@
-const apiFacturaUrl = 'http://backendchocolush.runasp.net/api/Factura';
-const apiProFacUrl = 'http://backendchocolush.runasp.net/api/DTOProFac';
-const apiDTOFactiuras = 'http://backendchocolush.runasp.net/api/DTOFactura/facturas';
+const apiFacturaUrl = 'https://backendchocolush.runasp.net/api/Factura';
+const apiProFacUrl = 'https://backendchocolush.runasp.net/api/DTOProFac';
+const apiDTOFactiuras = 'https://backendchocolush.runasp.net/api/DTOFactura/facturas';
 
 const params = new URLSearchParams(window.location.search);
 const facId = params.get('id');

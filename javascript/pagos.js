@@ -24,10 +24,10 @@ document.addEventListener('DOMContentLoaded', () => {
 });
 
 const APIBAnco = 'http://mibanca.runasp.net/api/cuentas'; // URL de la API del banco
-const APICompra = 'http://backendchocolush.runasp.net/api/integracion/compra'
-const APIClienteDTO = 'http://backendchocolush.runasp.net/api/DTOCliente/correo?correo='; // URL de la API para obtener el cliente por correo
-const APICompraInterna = 'http://backendchocolush.runasp.net/api/integracion/confirmarCompraInterna';
-const APIUltimaFactura = 'http://backendchocolush.runasp.net/api/Factura/ultimaFactura'; // URL de la API para obtener la última factura
+const APICompra = 'https://backendchocolush.runasp.net/api/integracion/compra'
+const APIClienteDTO = 'https://backendchocolush.runasp.net/api/DTOCliente/correo?correo='; // URL de la API para obtener el cliente por correo
+const APICompraInterna = 'https://backendchocolush.runasp.net/api/integracion/confirmarCompraInterna';
+const APIUltimaFactura = 'https://backendchocolush.runasp.net/api/Factura/ultimaFactura'; // URL de la API para obtener la última factura
 
 // Función para validar número de tarjeta (solo números y longitud de 16)
 function validarCuenta(numeroCuenta, callback) {
@@ -76,16 +76,10 @@ async function procesarPago(event) {
                         "cliTelefono": "0985423365"
         }
     }*/
-
-    validarCuenta(numeroCuenta, function () {
-        // Aquí va el resto del código para procesar el pago
-        alert("Cuenta válida. Procesando pago...");
-        const carrito = JSON.parse(sessionStorage.getItem('carrito')) || [];
-
-        const cliente = JSON.parse(sessionStorage.getItem('cliente')) || {};
-        console.log('Cliente:', cliente.email);
-
-        $.ajax({
+    const carrito = JSON.parse(sessionStorage.getItem('carrito')) || [];
+    const cliente = JSON.parse(sessionStorage.getItem('cliente')) || {};
+    console.log('Cliente:', cliente.email);
+    $.ajax({
             method: 'GET',
             url: `${APIClienteDTO}${cliente.email}`,
             success: function (data) {
@@ -96,7 +90,17 @@ async function procesarPago(event) {
                 alert('Error al obtener el cliente. Por favor, intenta nuevamente.');
             }
         })
-    });
+
+    // validarCuenta(numeroCuenta, function () {
+
+    //     alert("Cuenta válida. Procesando pago...");
+    //     const carrito = JSON.parse(sessionStorage.getItem('carrito')) || [];
+
+    //     const cliente = JSON.parse(sessionStorage.getItem('cliente')) || {};
+    //     console.log('Cliente:', cliente.email);
+
+        
+    // });
     function realizarCompra(cliente, carrito, numeroCuenta) {
         const direccionEntrega = document.getElementById('direccion-entrega');
         const metodoPago = "Transferencia Bancaria";
@@ -126,7 +130,7 @@ async function procesarPago(event) {
             contentType: 'application/json',
             data: JSON.stringify(carritoCompra),
             success: function (response) {
-                alert('Pago procesado exitosamente. ¡Gracias por tu compra!');
+                alert('¡Estamos procesando su pago, la factura ya fue generada!');
                 sessionStorage.removeItem('carrito'); // Limpiar el carrito después de la compra
                 /*window.location.href = '/index.html';*/
 
@@ -149,7 +153,8 @@ async function procesarPago(event) {
             },
             error: function (xhr) {
                 console.error('Error al procesar el pago:', xhr.responseText);
-                alert('Error al procesar el pago. Por favor, intenta nuevamente.');
+                const response = JSON.parse(xhr.responseText);
+                alert('Error al procesar la compra interna: ' + response.Message);
             }
         });
 
@@ -174,7 +179,8 @@ async function procesarPago(event) {
             },
             error: function (xhr) {
                 console.error('Error al procesar la compra interna:', xhr.responseText);
-                alert('Error al procesar la compra interna. Por favor, intenta nuevamente.', xhr.responseText);
+                const response = JSON.parse(xhr.responseText);
+                alert('Error al procesar la compra interna: ' + response.Message);
             }
         });
     }

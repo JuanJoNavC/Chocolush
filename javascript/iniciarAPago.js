@@ -12,7 +12,7 @@ document.querySelector('.login-button').addEventListener('click', async (event) 
     try {
         // 1. Consultar la API para obtener la contraseña almacenada
         const correo = encodeURIComponent(emailInput.value.trim());
-        const response = await fetch(`http://backendchocolush.runasp.net/api/cliente/correo?correo=${correo}`);
+        const response = await fetch(`https://backendchocolush.runasp.net/api/cliente/correo?correo=${correo}`);
 
         if (!response.ok) {
             throw new Error('Error al consultar el usuario.');
