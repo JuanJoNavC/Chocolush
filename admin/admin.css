@@ -398,3 +398,59 @@ footer {
         font-size: 1.2rem;
     }
 }
+
+
+.dark-mode {
+    background-color: #121212 !important;
+    color: #f0f0f0 !important;
+}
+
+.dark-mode .nav-bar,
+.dark-mode .main-nav,
+.dark-mode footer,
+.dark-mode .btn,
+.dark-mode .promociones,
+.dark-mode .basicbg,
+.dark-mode .brown-wave,
+.dark-mode .login-container,
+.dark-mode .signUp,
+.dark-mode aside,
+.dark-mode .producto,
+.dark-mode .infoReserva,
+.dark-mode .hero-modal,
+.dark-mode .main-container,
+.dark-mode .card {
+    background-color: #1e1e1e !important;
+    color: #f0f0f0 !important;
+}
+
+.dark-mode .nav-links li a,
+.dark-mode .user-icon,
+.dark-mode .btn-brown,
+.dark-mode .btn-yellow,
+.dark-mode .dark-mode-toggle i,
+.dark-mode h3,
+.dark-mode a {
+    color: #f0f0f0 !important;
+}
+
+.dark-mode .card h3 {
+    color: #f0f0f0 !important;
+    text-decoration: none;
+    border: none;
+}
+
+/* Optional: style the toggle button */
+.dark-mode-toggle {
+    background: none;
+    border: none;
+    font-size: 1.5rem;
+    color: #3c0d0d;
+    cursor: pointer;
+    margin-left: 1em;
+    transition: color 0.3s;
+}
+
+.dark-mode .dark-mode-toggle {
+    color: #ffcc00;
+}

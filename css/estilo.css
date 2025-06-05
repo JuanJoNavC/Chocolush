@@ -3570,3 +3570,62 @@ iframe {
 
 
 }
+
+
+
+
+
+/*Darkmode*/
+.dark-mode {
+    background-color: #121212 !important;
+    color: #f0f0f0 !important;
+}
+
+.dark-mode .nav-bar,
+.dark-mode .main-nav,
+.dark-mode footer,
+.dark-mode .btn,
+.dark-mode .promociones,
+.dark-mode .basicbg,
+.dark-mode .brown-wave,
+.dark-mode .login-container,
+.dark-mode .signUp,
+.dark-mode aside,
+.dark-mode .resumen,
+.dark-mode .producto,
+.dark-mode .subtitle,
+.dark-mode h1,
+.dark-mode h2,
+.dark-mode .yellow-section::after,
+.dark-mode .datosPago,
+.dark-mode .datosPago1,
+.dark-mode .hero-modal,
+.dark-mode .forgot-password,
+.dark-mode .productoEspecifico,
+.dark-mode .infoReserva {
+    background-color: #1e1e1e !important;
+    color: #f0f0f0 !important;
+}
+
+.dark-mode .nav-links li a,
+.dark-mode .user-icon,
+.dark-mode .btn-brown,
+.dark-mode .btn-yellow,
+.dark-mode .dark-mode-toggle i {
+    color: #f0f0f0 !important;
+}
+
+/* Optional: style the toggle button */
+.dark-mode-toggle {
+    background: none;
+    border: none;
+    font-size: 1.5rem;
+    color: #3c0d0d;
+    cursor: pointer;
+    margin-left: 1em;
+    transition: color 0.3s;
+}
+
+.dark-mode .dark-mode-toggle {
+    color: #ffcc00;
+}
